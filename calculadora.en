@@ -1,0 +1,5 @@
+entity calculadora {   
+    sumar  ()
+    restar ()
+    
+}

@@ -1,0 +1,25 @@
+Entity:
+    'entity' name=ID '{'
+        comandos*=Command
+    '}'
+;
+
+Command:
+    SumarCommand | RestarCommand
+;
+
+SumarCommand:
+    name=ID '()'
+;
+
+RestarCommand:
+    name=ID '()'
+;
+
+Type:
+    SimpleType
+;
+
+SimpleType:
+    'type' name=ID
+;

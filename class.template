@@ -1,0 +1,26 @@
+public class {{entity.name|capitalize}} {
+  {% for property in entity.comandos %}
+    {% if property is comandos %}
+      public void {{property.name}}(){
+      }
+    {% else %}
+       private {{property.type|javatype}} {{property.name}};
+    {% endif %}
+  {% endfor %}
+
+  {% for property in entity.properties %}
+  {% if property is not comandos %}
+    public {{property.type}} get{{property.name|capitalize}}(){
+      return this.{{property.name}};
+    }
+  {% endif %}
+  {% endfor %}
+  
+  {% for property in entity.properties %}
+    {% if property is not comandos %}
+      public void set{{property.name|capitalize}}({{property.type}} value){
+        this.{{property.name}} = value;
+      }
+    {% endif %}
+  {% endfor %}
+}

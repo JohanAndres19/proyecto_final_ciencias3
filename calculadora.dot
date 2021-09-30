@@ -1,0 +1,36 @@
+
+    digraph textX {
+    fontname = "Bitstream Vera Sans"
+    fontsize = 8
+    node[
+        shape=record,
+        style=filled,
+        fillcolor=aliceblue
+    ]
+    nodesep = 0.3
+    edge[dir=black,arrowtail=empty]
+
+
+2495591107792[ label="{Entitymodel|}"]
+
+2495591106848[ label="{Entity|name: ID\l}"]
+
+2495591083248[ label="{Method|name: ID\l}"]
+
+2495591092688[ label="{Atribute|name: ID\l}"]
+
+2495591108736[ label="{*Type|}"]
+
+2495591103072[ label="{SimpleType|name: ID\l}"]
+
+
+
+2495591107792 -> 2495591103072[arrowtail=diamond, dir=both, headlabel="types 0..*"]
+2495591107792 -> 2495591106848[arrowtail=diamond, dir=both, headlabel="entities 1..*"]
+2495591107792 -> 2495591083248[arrowtail=diamond, dir=both, headlabel="metodos 1..*"]
+2495591106848 -> 2495591092688[arrowtail=diamond, dir=both, headlabel="atributes 1..*"]
+2495591083248 -> 2495591108736[headlabel="type "]
+2495591092688 -> 2495591108736[headlabel="type "]
+2495591108736 -> 2495591103072 [dir=back]
+
+}
