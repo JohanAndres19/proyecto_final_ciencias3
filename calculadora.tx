@@ -1,19 +1,32 @@
 Entity:
+    
     'entity' name=ID '{'
-        comandos*=Command
+        variable+=Variable
+        scomandos*=SumarCommand
+        rcomandos*=RestarCommand
+        mcomandos*=MultiplicarCommand
+        dcomandos*=DividirCommand
     '}'
 ;
 
-Command:
-    SumarCommand | RestarCommand
+Variable:
+    name=ID ':' type=[Type]
 ;
 
 SumarCommand:
-    name=ID '()'
+    name=ID '()' '+'
 ;
 
 RestarCommand:
-    name=ID '()'
+    name=ID '()' '-'
+;
+
+MultiplicarCommand:
+    name=ID '()' '*'
+;
+
+DividirCommand:
+    name=ID '()' '/'
 ;
 
 Type:

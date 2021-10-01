@@ -1,25 +1,38 @@
 public class {{entity.name|capitalize}} {
-  {% for property in entity.comandos %}
-    {% if property is comandos %}
-      public void {{property.name}}(){
-      }
-    {% else %}
-       private {{property.type|javatype}} {{property.name}};
+  {% for property in entity.variable %}
+    {% if property is variable %}
+      private int {{property.name}};
     {% endif %}
   {% endfor %}
 
-  {% for property in entity.properties %}
-  {% if property is not comandos %}
-    public {{property.type}} get{{property.name|capitalize}}(){
-      return this.{{property.name}};
-    }
-  {% endif %}
+  {% for property in entity.scomandos %}
+    {%if property is suma %}
+      public void {{property.name}}(){
+        System.out.println({% for property in entity.variable %}{% if property is variable %}{{property.name}} + {% endif %}{% endfor %}0);
+      }
+    {% endif %}
   {% endfor %}
-  
-  {% for property in entity.properties %}
-    {% if property is not comandos %}
-      public void set{{property.name|capitalize}}({{property.type}} value){
-        this.{{property.name}} = value;
+
+  {% for property in entity.rcomandos %}
+    {%if property is resta %}
+      public void {{property.name}}(){
+        System.out.println({% for property in entity.variable %}{% if property is variable %}{{property.name}} - {% endif %}{% endfor %}0);
+      }
+    {% endif %}
+  {% endfor %}
+
+  {% for property in entity.mcomandos %}
+    {%if property is multi %}
+      public void {{property.name}}(){
+        System.out.println({% for property in entity.variable %}{% if property is variable %}{{property.name}} * {% endif %}{% endfor %}1);
+      }
+    {% endif %}
+  {% endfor %}
+
+  {% for property in entity.dcomandos %}
+    {%if property is division %}
+      public void {{property.name}}(){
+        System.out.println({% for property in entity.variable %}{% if property is variable %}{{property.name}} / {% endif %}{% endfor %}1);
       }
     {% endif %}
   {% endfor %}

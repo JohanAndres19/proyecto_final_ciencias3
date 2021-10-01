@@ -10,26 +10,41 @@ def main(debug=False):
     entity_mm = get_entity_mm(debug)
     # Build Person model from person.ent file
     calculator_model = entity_mm.model_from_file(join(this_folder,'calculadora.en'))
-    """
-    def is_entity(n):
-        
-        Test to prove if some type is an entity
-    
-        if n.type in calculator_model.entities:
+
+    def is_variable(n):
+
+        if n in calculator_model.variable:
             return True
         else:
             return False
-    """
-    def is_command(n):
-        return True
-        
-    def javatype(s):
-        """
-        Maps type names from PrimitiveType to Java.
-        """
-        return {
-                'void': 'void',
-        }.get(s.name, s.name)
+
+    def is_suma(n):
+
+        if n in calculator_model.scomandos:
+            return True
+        else:
+            return False
+
+    def is_resta(n):
+
+        if n in calculator_model.rcomandos:
+            return True
+        else:
+            return False
+
+    def is_multi(n):
+
+        if n in calculator_model.mcomandos:
+            return True
+        else:
+            return False
+
+    def is_division(n):
+
+        if n in calculator_model.dcomandos:
+            return True
+        else:
+            return False
 
     # Create output folder
     srcgen_folder = join(this_folder, 'srcgen')
@@ -46,9 +61,13 @@ def main(debug=False):
 
     #jinja_env.tests['entity'] = is_entity
     
-    jinja_env.filters['javatype'] = javatype
+    #jinja_env.filters['javatype'] = javatype
 
-    jinja_env.tests['comandos'] = is_command    # Load template
+    jinja_env.tests['variable'] = is_variable
+    jinja_env.tests['suma'] = is_suma
+    jinja_env.tests['resta'] = is_resta
+    jinja_env.tests['multi'] = is_multi
+    jinja_env.tests['division'] = is_division
     template = jinja_env.get_template('class.template')
 
     

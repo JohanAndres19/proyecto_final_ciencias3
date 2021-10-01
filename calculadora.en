@@ -1,5 +1,9 @@
-entity calculadora {   
-    sumar  ()
-    restar ()
-    
+entity calculadora {
+    x : INT
+    y : INT
+
+    sumar  () +
+    restar () -
+    multiplicar () *
+    division () /
 }
