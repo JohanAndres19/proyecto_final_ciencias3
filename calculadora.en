@@ -2,8 +2,10 @@ entity calculadora {
     x : INT
     y : INT
 
+    Calculadora () c
     sumar  () +
     restar () -
     multiplicar () *
     division () /
+    main () m
 }

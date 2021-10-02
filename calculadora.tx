@@ -2,15 +2,21 @@ Entity:
     
     'entity' name=ID '{'
         variable+=Variable
+        command*=Command
         scomandos*=SumarCommand
         rcomandos*=RestarCommand
         mcomandos*=MultiplicarCommand
         dcomandos*=DividirCommand
+        main*=MainCommand
     '}'
 ;
 
 Variable:
     name=ID ':' type=[Type]
+;
+
+Command:
+    name=ID '()' 'c'
 ;
 
 SumarCommand:
@@ -27,6 +33,10 @@ MultiplicarCommand:
 
 DividirCommand:
     name=ID '()' '/'
+;
+
+MainCommand:
+    name=ID '()' 'm'
 ;
 
 Type:

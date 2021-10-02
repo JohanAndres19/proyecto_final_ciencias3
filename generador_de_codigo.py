@@ -8,12 +8,19 @@ def main(debug=False):
     this_folder = dirname(__file__)
 
     entity_mm = get_entity_mm(debug)
-    # Build Person model from person.ent file
+    
     calculator_model = entity_mm.model_from_file(join(this_folder,'calculadora.en'))
 
     def is_variable(n):
 
         if n in calculator_model.variable:
+            return True
+        else:
+            return False
+
+    def is_command(n):
+
+        if n in calculator_model.command:
             return True
         else:
             return False
@@ -46,6 +53,13 @@ def main(debug=False):
         else:
             return False
 
+    def is_main(n):
+
+        if n in calculator_model.main:
+            return True
+        else:
+            return False
+
     # Create output folder
     srcgen_folder = join(this_folder, 'srcgen')
     if not exists(srcgen_folder):
@@ -64,10 +78,12 @@ def main(debug=False):
     #jinja_env.filters['javatype'] = javatype
 
     jinja_env.tests['variable'] = is_variable
+    jinja_env.tests['command'] = is_command
     jinja_env.tests['suma'] = is_suma
     jinja_env.tests['resta'] = is_resta
     jinja_env.tests['multi'] = is_multi
     jinja_env.tests['division'] = is_division
+    jinja_env.tests['main'] = is_main
     template = jinja_env.get_template('class.template')
 
     
