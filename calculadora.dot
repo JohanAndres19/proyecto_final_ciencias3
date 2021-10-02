@@ -11,26 +11,47 @@
     edge[dir=black,arrowtail=empty]
 
 
-2495591107792[ label="{Entitymodel|}"]
+140675528004544[ label="{Entity|name: ID\l}"]
 
-2495591106848[ label="{Entity|name: ID\l}"]
+140675528043248[ label="{Variable|name: ID\l}"]
 
-2495591083248[ label="{Method|name: ID\l}"]
+140675527917520[ label="{*Command|}"]
 
-2495591092688[ label="{Atribute|name: ID\l}"]
+140675527801584[ label="{Constuctor|name: ID\l}"]
 
-2495591108736[ label="{*Type|}"]
+140675526734384[ label="{SumarCommand|name: ID\l}"]
 
-2495591103072[ label="{SimpleType|name: ID\l}"]
+140675526737216[ label="{RestarCommand|name: ID\l}"]
+
+140675526740624[ label="{MultiplicarCommand|name: ID\l}"]
+
+140675527915184[ label="{DividirCommand|name: ID\l}"]
+
+140675527944560[ label="{MainCommand|name: ID\l}"]
+
+140675527926368[ label="{*Type|}"]
+
+140675527922304[ label="{MakeType|name: ID\l}"]
+
+140675528045760[ label="{SimpleType|name: ID\l}"]
 
 
 
-2495591107792 -> 2495591103072[arrowtail=diamond, dir=both, headlabel="types 0..*"]
-2495591107792 -> 2495591106848[arrowtail=diamond, dir=both, headlabel="entities 1..*"]
-2495591107792 -> 2495591083248[arrowtail=diamond, dir=both, headlabel="metodos 1..*"]
-2495591106848 -> 2495591092688[arrowtail=diamond, dir=both, headlabel="atributes 1..*"]
-2495591083248 -> 2495591108736[headlabel="type "]
-2495591092688 -> 2495591108736[headlabel="type "]
-2495591108736 -> 2495591103072 [dir=back]
+140675528004544 -> 140675528043248[arrowtail=diamond, dir=both, headlabel="variable 1..*"]
+140675528004544 -> 140675527917520[arrowtail=diamond, dir=both, headlabel="comandos 0..*"]
+140675528043248 -> 140675527926368[headlabel="type "]
+140675527917520 -> 140675526734384 [dir=back]
+140675527917520 -> 140675526737216 [dir=back]
+140675527917520 -> 140675526740624 [dir=back]
+140675527917520 -> 140675527915184 [dir=back]
+140675527917520 -> 140675527944560 [dir=back]
+140675527917520 -> 140675527801584 [dir=back]
+140675527801584 -> 140675527926368[headlabel="type "]
+140675526734384 -> 140675527926368[headlabel="type "]
+140675526737216 -> 140675527926368[headlabel="type "]
+140675526740624 -> 140675527926368[headlabel="type "]
+140675527915184 -> 140675527926368[headlabel="type "]
+140675527944560 -> 140675527926368[headlabel="type "]
+140675527926368 -> 140675528045760 [dir=back]
 
 }

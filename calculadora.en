@@ -2,10 +2,10 @@ entity calculadora {
     x : INT
     y : INT
 
-    Calculadora () c
-    sumar  () +
-    restar () -
-    multiplicar () *
-    division () /
-    main () m
+    constructor Calculadora () c
+    void sumar  () +
+    void restar () -
+    void multiplicar () *
+    void division () /
+    main Main () m
 }

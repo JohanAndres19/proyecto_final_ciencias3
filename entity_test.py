@@ -32,7 +32,10 @@ def get_entity_mm(debug=False):
     # Each model will have this simple types during reference resolving but
     # these will not be a part of `types` list of EntityModel.
     type_builtins = {
-            'INT': SimpleType(None, 'void'),
+            'INT': SimpleType(None, 'INT'),
+            'void' : SimpleType(None,'void'),
+            'constructor': SimpleType(None,'constructor'),
+            'main': SimpleType(None,'main')
     }
     entity_mm = metamodel_from_file(join(this_folder, 'calculadora.tx'),
                                     classes=[SimpleType],
