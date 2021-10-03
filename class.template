@@ -15,11 +15,17 @@ public class {{entity.name|capitalize}} {
   {%for property in entity.variable %}
     this.{{property.name}}={{property.name}};
   {%endfor%}
+  {%for property in entity.comandos%}
+  {%if (property.type is not main) and (property.type is not constructor)%}
+    this.{{property.name}}();
+  {%endif%}
+  {%endfor%}
   }
   {%else%}  
   public {{property.type|javatype}} {{property.name}}(){
-
+    {%set dicc= {'sumar':'+' ,'restar':'-' , 'multiplicar':'*' ,'division':'/'}%}
+    System.out.println({%set aux=(entity.variable|tamaño)-1%}{%for i in range(entity.variable|tamaño)%}{%if i<aux %}{{entity.variable[i].name}} {{dicc.get(property.name)}} {%else%}{{entity.variable[i].name}}{%endif%}{% endfor %});
   }
-  {% endif %}  
+  {%endif%}  
   {% endfor %}
 }

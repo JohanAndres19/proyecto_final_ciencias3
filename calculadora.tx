@@ -11,7 +11,7 @@ Variable:
 ;
 
 Command:
-    SumarCommand | RestarCommand | MultiplicarCommand | DividirCommand |MainCommand | Constuctor
+    SumarCommand | RestarCommand | MultiplicarCommand | DividirCommand | MainCommand | Constuctor
 ;
 
 Constuctor:
@@ -40,10 +40,6 @@ MainCommand:
 
 Type:
     SimpleType 
-;
-
-MakeType:
-    name=ID
 ;
 
 SimpleType:

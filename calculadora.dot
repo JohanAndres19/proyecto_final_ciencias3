@@ -11,26 +11,47 @@
     edge[dir=black,arrowtail=empty]
 
 
-2495591107792[ label="{Entitymodel|}"]
+2179170763280[ label="{Entity|name: ID\l}"]
 
-2495591106848[ label="{Entity|name: ID\l}"]
+2179170662272[ label="{Variable|name: ID\l}"]
 
-2495591083248[ label="{Method|name: ID\l}"]
+2179170665104[ label="{*Command|}"]
 
-2495591092688[ label="{Atribute|name: ID\l}"]
+2179170650944[ label="{Constuctor|name: ID\l}"]
 
-2495591108736[ label="{*Type|}"]
+2179170649056[ label="{SumarCommand|name: ID\l}"]
 
-2495591103072[ label="{SimpleType|name: ID\l}"]
+2179170661328[ label="{RestarCommand|name: ID\l}"]
+
+2179170666992[ label="{MultiplicarCommand|name: ID\l}"]
+
+2179170655664[ label="{DividirCommand|name: ID\l}"]
+
+2179170667936[ label="{MainCommand|name: ID\l}"]
+
+2179170670768[ label="{*Type|}"]
+
+2179170639616[ label="{MakeType|name: ID\l}"]
+
+2179170672656[ label="{SimpleType|name: ID\l}"]
 
 
 
-2495591107792 -> 2495591103072[arrowtail=diamond, dir=both, headlabel="types 0..*"]
-2495591107792 -> 2495591106848[arrowtail=diamond, dir=both, headlabel="entities 1..*"]
-2495591107792 -> 2495591083248[arrowtail=diamond, dir=both, headlabel="metodos 1..*"]
-2495591106848 -> 2495591092688[arrowtail=diamond, dir=both, headlabel="atributes 1..*"]
-2495591083248 -> 2495591108736[headlabel="type "]
-2495591092688 -> 2495591108736[headlabel="type "]
-2495591108736 -> 2495591103072 [dir=back]
+2179170763280 -> 2179170662272[arrowtail=diamond, dir=both, headlabel="variable 1..*"]
+2179170763280 -> 2179170665104[arrowtail=diamond, dir=both, headlabel="comandos 0..*"]
+2179170662272 -> 2179170670768[headlabel="type "]
+2179170665104 -> 2179170649056 [dir=back]
+2179170665104 -> 2179170661328 [dir=back]
+2179170665104 -> 2179170666992 [dir=back]
+2179170665104 -> 2179170655664 [dir=back]
+2179170665104 -> 2179170667936 [dir=back]
+2179170665104 -> 2179170650944 [dir=back]
+2179170650944 -> 2179170670768[headlabel="type "]
+2179170649056 -> 2179170670768[headlabel="type "]
+2179170661328 -> 2179170670768[headlabel="type "]
+2179170666992 -> 2179170670768[headlabel="type "]
+2179170655664 -> 2179170670768[headlabel="type "]
+2179170667936 -> 2179170670768[headlabel="type "]
+2179170670768 -> 2179170672656 [dir=back]
 
 }

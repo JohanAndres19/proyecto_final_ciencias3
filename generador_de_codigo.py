@@ -63,8 +63,6 @@ def main(debug=False):
     jinja_env.tests['main'] = is_main
     jinja_env.tests['constructor']=is_constructor
     template = jinja_env.get_template('class.template')
-
-    
         # For each entity generate java file
     with open(join(srcgen_folder,
                        "%s.java" % calculator_model.name.capitalize()), 'w') as f:
